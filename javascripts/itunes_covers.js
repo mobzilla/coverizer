@@ -1,5 +1,5 @@
 (function($) {
-	$.coverHover = function(el, options) {
+	$.coverizer = function(el, options) {
 		var base = this;
 		
 		base.$el = $(el)
@@ -8,7 +8,7 @@
 		base.section_width = 0;
 		
 		base.init = function() {
-			base.options = $.extend({},$.coverHover.defaults, options);
+			base.options = $.extend({},$.coverizer.defaults, options);
 			// Find Images
 			base.images = base.$el.find("img");
 			if(base.images.length > 0) {
@@ -57,12 +57,12 @@
 		base.init();
 	};
 	
-	$.coverHover.defaults = {
+	$.coverizer.defaults = {
 	};
 	
-	$.fn.coverHover = function(options) {
+	$.fn.coverizer = function(options) {
 		return this.each(function(i){			
-			(new $.coverHover(this, options));
+			(new $.coverizer(this, options));
 		});	
 	};
 })(jQuery);
